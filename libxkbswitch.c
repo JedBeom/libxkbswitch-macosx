@@ -30,7 +30,7 @@
 
 const char * Xkb_Switch_setXkbLayout( const char * param ) {
     char command[100] = "";
-    strcat(command, "/usr/local/bin/xkbswitch -s ");
+    strcat(command, "xkbswitch -s ");
     strcat(command, param);
     
     system(command);
@@ -42,7 +42,7 @@ const char * Xkb_Switch_getXkbLayout( const char * param ) {
     FILE *fp;
     static char result[100];
     
-    fp = popen("/usr/local/bin/xkbswitch -g", "r");
+    fp = popen("xkbswitch -g", "r");
     if (fp == NULL) {
         printf("Failed to run command\n" );
         exit(1);

@@ -1,18 +1,25 @@
-#Libxkbswitch-macosx
+# Libxkbswitch-macosx for Apple Slicon macs
 
-Mac OS X library for [vim-xkbswitch](https://github.com/lyokha/vim-xkbswitch) plugin
+macOS library for [vim-xkbswitch](https://github.com/lyokha/vim-xkbswitch) plugin.
+This repository is forked from [myshov/libxkbswitch-macosx](https://github.com/myshov/libxkbswitch-macosx) to support Apple Slicon macs.
 
-##Usage: 
-* This library uses [xkbswitch-macosx](https://github.com/myshov/xkbswitch-macosx) - console utility for keyboard layout
-switching. Put executable file of it in any directory in your $PATH variable,
-for example, in `/usr/local/bin`.
-* Put library libxkbswitch.dylib (you can find compiled version of it in bin 
-directory) to `/usr/local/lib` path.
+## Usage 
 
-##License
+- This library uses [xkbswitch-macosx (forked version)](https://github.com/xiehuc/xkbswitch-macosx) - console utility for keyboard layout switching. 
+    - Check out README.md of that repository to install the utility.
+    - You might not get expected results if you use [xkbswitch-macosx (original version)](https://github.com/myshov/xkbswitch-macosx), so do not use it.
+- Put library `libxkbswitch.dylib` (you can find compiled version of it in `./bin`) to `/usr/local/lib`.
+    - You can put the file in your preferred `lib`. A configuration change is needed for vim-xkbswitch (`let g:XkbSwitchLib = '/path/to/your/lib/file'`)
+
+## Trouble Shooting
+
+- If you got an error `incompatible architecture`, try to build this library again with `make` or try the original repository (the second link from above)
+
+## License
+
 The MIT License (MIT)
 
-Copyright (c) 2015 Alexander Myshov
+Copyright (c) 2015 Alexander Myshov | Beom, Junhwan
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
